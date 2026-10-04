@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Arnx Food &amp; Drinks | 100% Pure Vegetarian Luxury Dining &amp; Lounge</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Experience royal vegetarian dining at The Arnx Food & Drinks. 100% Pure Veg royal thalis, charcoal-smoked tandoor, artisanal craft mocktails, and divine desserts. Order online or reserve your table.">
+  <meta name="keywords" content="The Arnx Food, Arnx food and drinks, pure veg restaurant, luxury indian dining, vegetarian royal thali, paneer tikka, dal bukhara, artisanal mocktails, jain food">
+  <meta name="theme-color" content="#071911">
+  <meta property="og:title" content="The Arnx Food &amp; Drinks | 100% Pure Vegetarian Delights">
+  <meta property="og:description" content="Royal vegetarian cuisine crafted with A2 Desi Ghee &amp; hand-pounded spices. Discover our signature thalis, mocktails, and gourmet curries.">
+  <meta property="og:image" content="assets/images/hero_dining.jpg">
+  <meta property="og:type" content="restaurant.restaurant">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/arnx_logo.svg">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Special Offers">
+    <div class="announcement-bar-content">
+      <span>✨ <strong>100% Pure Vegetarian Kitchen</strong> • Authentic A2 Desi Ghee &amp; Stone-Pounded Spices</span>
+      <span>•</span>
+      <span>Use code <span class="announcement-highlight">ARNXFIRST</span> for <strong>15% OFF</strong></span>
+      <span>•</span>
+      <span>🟢 Jain Friendly Options Prepared in Dedicated Stations</span>
+    </div>
+    <div style="font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
+      <span>📞 Reservations:</span>
+      <a href="tel:+919876543210" style="color: var(--gold-300); font-weight: 700;">+91 98765 43210</a>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo-wrap" aria-label="The Arnx Home">
+        <img src="assets/images/arnx_logo.svg" alt="The Arnx Food and Drinks Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#specials" class="nav-link">Chef's Specials</a></li>
+          <li><a href="#menuSection" class="nav-link">Our Menu</a></li>
+          <li><a href="#drinksSection" class="nav-link">Drinks Lounge</a></li>
+          <li><a href="#philosophySection" class="nav-link">Pure Veg Legacy</a></li>
+          <li><a href="#reservationSection" class="nav-link">Book Table</a></li>
+          <li><a href="#reviewsSection" class="nav-link">Reviews</a></li>
+          <li><a href="#contactSection" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Table Booking CTA -->
+        <button class="btn-secondary btn-sm" onclick="scrollToSection('reservationSection')">
+          🥂 Reserve Table
+        </button>
+
+        <!-- Cart Nav Button -->
+        <button class="cart-nav-btn open-cart-btn" aria-label="View Shopping Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" id="navCartCount" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Open Mobile Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileNavDrawer" style="position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background: var(--emerald-950); border-left: 1px solid var(--border-gold); z-index: 250; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; transition: right 0.3s ease;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
+      <span style="font-family: var(--font-serif); font-weight: 700; color: #fff;">Menu</span>
+      <button id="mobileNavClose" style="font-size: 1.5rem; color: #fff;">✕</button>
+    </div>
+    <a href="#home" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Home</a>
+    <a href="#specials" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Chef's Specials</a>
+    <a href="#menuSection" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Our Menu</a>
+    <a href="#drinksSection" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Drinks Lounge</a>
+    <a href="#philosophySection" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Pure Veg Legacy</a>
+    <a href="#reservationSection" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Book a Table</a>
+    <a href="#reviewsSection" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Reviews</a>
+    <a href="#contactSection" class="mobile-nav-link" style="color: #fff; font-weight: 600;">Contact</a>
+    <button class="btn-primary" style="margin-top: 1rem;" onclick="scrollToSection('reservationSection'); document.getElementById('mobileNavDrawer').classList.remove('open');">
+      Book Table Now
+    </button>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-radial-glow"></div>
+
+      <div class="container hero-container">
+        <!-- Hero Left Content -->
+        <div class="hero-content">
+          <div class="hero-pure-veg-badge">
+            <span class="pure-veg-icon" style="width: 18px; height: 18px;"></span>
+            <span>100% CERTIFIED PURE VEGETARIAN RESTAURANT &amp; LOUNGE</span>
+          </div>
+
+          <h1 class="hero-title">
+            Pure Indulgence. <br>
+            <span class="gold-gradient-text">Royal Indian Flavors.</span>
+          </h1>
+
+          <p class="hero-description">
+            Welcome to <strong>The Arnx Food &amp; Drinks</strong> — where regal culinary traditions of Indian royal kitchens converge with modern gourmet dining, artisanal craft mocktails, and pristine 100% vegetarian purity.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="scrollToSection('menuSection')">
+              🍽️ Explore Royal Menu
+            </button>
+            <button class="btn-secondary" onclick="scrollToSection('reservationSection')">
+              🥂 Book a Royal Table
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Pure Vegetarian</p>
+            </div>
+            <div class="stat-item">
+              <h3>4.95 ★</h3>
+              <p>Over 3,500+ Reviews</p>
+            </div>
+            <div class="stat-item">
+              <h3>24+</h3>
+              <p>Signature Delicacies</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Showcase Card -->
+        <div class="hero-card-showcase">
+          <div class="hero-featured-card">
+            <div class="hero-featured-img-wrap">
+              <img src="assets/images/royal_thali.jpg" alt="The Arnx Shahi Royal Thali" class="hero-featured-img">
+              <div class="hero-badge-floating">
+                <span>👑</span>
+                <span>Chef's Masterpiece of the Day</span>
+              </div>
+            </div>
+
+            <div class="hero-card-body">
+              <div class="hero-card-title-row">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem;">
+                    <span class="pure-veg-icon"></span>
+                    <span style="font-size: 0.75rem; color: var(--emerald-400); font-weight: 700;">PURE VEG SIGNATURE</span>
+                  </div>
+                  <h3 class="hero-card-title">The Arnx Shahi Royal Thali</h3>
+                </div>
+                <div class="hero-card-price">₹549</div>
+              </div>
+
+              <p class="hero-card-desc">
+                Slow-simmered Dal Bukhara, Paneer Lababdar, Subz Diwani, Saffron Basmati Biryani, Baby Naans, and Silver Vark Gulab Jamun served in royal brass.
+              </p>
+
+              <div style="display: flex; gap: 0.8rem; align-items: center;">
+                <button class="btn-primary btn-sm" style="flex: 1;" onclick="addToCart('thali-01')">
+                  🛒 Order This Thali
+                </button>
+                <button class="btn-secondary btn-sm" onclick="openQuickView('thali-01')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Proof Floating Pill -->
+          <div class="floating-pill">
+            <div class="floating-pill-avatar">★</div>
+            <div class="floating-pill-text">
+              <strong>"Best Dal &amp; Mocktails in Town!"</strong>
+              <span>Verified Google 5-Star Diner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Quality Strip -->
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon-box">🌱</div>
+          <div class="trust-text">
+            <h4>100% Pure Vegetarian</h4>
+            <p>Strictly egg-free &amp; meat-free sacred kitchen</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon-box">👑</div>
+          <div class="trust-text">
+            <h4>A2 Desi Cow Ghee</h4>
+            <p>Cooked in authentic cold-pressed oils &amp; Gir ghee</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon-box">✨</div>
+          <div class="trust-text">
+            <h4>Jain Friendly Kitchen</h4>
+            <p>Separate cooking stations for no-onion-garlic</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon-box">🛵</div>
+          <div class="trust-text">
+            <h4>Royal Fast Delivery</h4>
+            <p>Heat-insulated premium tamper-proof boxes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chef's Specials Showcase -->
+    <section class="menu-section" id="specials" style="padding-bottom: 2rem;">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Royal Gastronomy</span>
+          <h2 class="section-title">Chef's Signature <span class="gold-gradient-text">Showcase</span></h2>
+          <p class="section-subtitle">
+            Handcrafted by culinary masters trained in royal Awadhi, Mewari, and contemporary fusion gastronomy.
+          </p>
+        </div>
+
+        <!-- 4 Featured Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin-bottom: 3rem;">
+          <!-- Special 1 -->
+          <div class="menu-card">
+            <div class="menu-card-img-wrap" style="height: 200px;">
+              <img src="assets/images/paneer_tikka.jpg" alt="Paneer Malai Tikka" class="menu-card-img">
+              <div class="menu-card-badges">
+                <span class="badge-tag chef">🔥 Live Tandoor</span>
+              </div>
+            </div>
+            <div class="menu-card-content">
+              <div class="menu-card-meta">
+                <span class="pure-veg-icon"></span>
+                <span class="menu-card-rating">★ 4.92</span>
+              </div>
+              <h3 class="menu-card-name">Paneer Malai Tikka</h3>
+              <p class="menu-card-desc">Charcoal-grilled cottage cheese marinated in cardamom saffron cream.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">₹369</span>
+                <button class="add-to-cart-btn" onclick="addToCart('starter-01')">+ Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special 2 -->
+          <div class="menu-card">
+            <div class="menu-card-img-wrap" style="height: 200px;">
+              <img src="assets/images/dal_makhani.jpg" alt="Dal Bukhara" class="menu-card-img">
+              <div class="menu-card-badges">
+                <span class="badge-tag bestseller">⭐ 24-Hr Simmer</span>
+              </div>
+            </div>
+            <div class="menu-card-content">
+              <div class="menu-card-meta">
+                <span class="pure-veg-icon"></span>
+                <span class="menu-card-rating">★ 4.96</span>
+              </div>
+              <h3 class="menu-card-name">24-Hr Dal Bukhara</h3>
+              <p class="menu-card-desc">Whole black lentils cooked slowly over wood charcoal with white butter.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">₹389</span>
+                <button class="add-to-cart-btn" onclick="addToCart('main-01')">+ Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special 3 -->
+          <div class="menu-card">
+            <div class="menu-card-img-wrap" style="height: 200px;">
+              <img src="assets/images/craft_mocktails.jpg" alt="Craft Mocktails" class="menu-card-img">
+              <div class="menu-card-badges">
+                <span class="badge-tag chef">🍸 Gold Refresher</span>
+              </div>
+            </div>
+            <div class="menu-card-content">
+              <div class="menu-card-meta">
+                <span class="pure-veg-icon"></span>
+                <span class="menu-card-rating">★ 4.96</span>
+              </div>
+              <h3 class="menu-card-name">Saffron Mango Refresher</h3>
+              <p class="menu-card-desc">Alphonso mango, Kashmiri saffron, and edible 24K gold shimmer.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">₹259</span>
+                <button class="add-to-cart-btn" onclick="addToCart('drink-02')">+ Add</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special 4 -->
+          <div class="menu-card">
+            <div class="menu-card-img-wrap" style="height: 200px;">
+              <img src="assets/images/royal_dessert.jpg" alt="Pistachio Kulfi Tower" class="menu-card-img">
+              <div class="menu-card-badges">
+                <span class="badge-tag bestseller">🍨 Master Sweet</span>
+              </div>
+            </div>
+            <div class="menu-card-content">
+              <div class="menu-card-meta">
+                <span class="pure-veg-icon"></span>
+                <span class="menu-card-rating">★ 4.97</span>
+              </div>
+              <h3 class="menu-card-name">Kulfi Tower &amp; Jamun</h3>
+              <p class="menu-card-desc">Pistachio rabdi kulfi tower paired with warm rose gulab jamun.</p>
+              <div class="menu-card-footer">
+                <span class="menu-card-price">₹289</span>
+                <button class="add-to-cart-btn" onclick="addToCart('dessert-01')">+ Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section class="menu-section" id="menuSection">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Culinary Catalog</span>
+          <h2 class="section-title">The Complete <span class="gold-gradient-text">Arnx Menu</span></h2>
+          <p class="section-subtitle">
+            Explore our curated culinary collection. Filter by your preferred taste, category, or dietary choices.
+          </p>
+        </div>
+
+        <!-- Menu Interactive Controls -->
+        <div class="menu-controls">
+          <!-- Search Bar & Dietary Filter Pills -->
+          <div class="menu-search-row">
+            <div class="menu-search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="menuSearchInput" class="menu-search-input" placeholder="Search delicacies, mocktails, paneer, biryani, thali...">
+            </div>
+            
+            <div class="dietary-filters">
+              <button class="filter-chip dietary-filter-chip active" data-diet="all">All Items</button>
+              <button class="filter-chip dietary-filter-chip" data-diet="chef">👑 Chef Specials</button>
+              <button class="filter-chip dietary-filter-chip" data-diet="bestseller">⭐ Bestsellers</button>
+              <button class="filter-chip dietary-filter-chip" data-diet="jain">🟢 Jain Friendly</button>
+            </div>
+          </div>
+
+          <!-- Category Horizontal Tabs -->
+          <div class="category-tabs-wrap" id="categoryTabsContainer">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+        <!-- Dishes Grid -->
+        <div class="menu-grid" id="menuGridContainer">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Spotlight: Artisanal Drinks & Mocktail Lounge -->
+    <section class="drinks-spotlight-section" id="drinksSection">
+      <div class="container">
+        <div class="drinks-grid">
+          <!-- Left: Feature Image -->
+          <div class="drinks-image-container">
+            <div class="drinks-featured-img-wrap">
+              <img src="assets/images/craft_mocktails.jpg" alt="Arnx Artisanal Craft Mocktails">
+            </div>
+            <div class="floating-pill" style="bottom: 20px; right: 20px;">
+              <span style="font-size: 1.5rem;">🍸</span>
+              <div class="floating-pill-text">
+                <strong>Zero Alcohol • 100% Craft</strong>
+                <span>Natural extracts &amp; botanical elixirs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Details & Drinks Highlight -->
+          <div>
+            <span class="section-badge">The Lounge Experience</span>
+            <h2 class="section-title">The Arnx <span class="gold-gradient-text">Drinks Lounge</span></h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+              Elevate your dining experience with our mixologist-crafted molecular coolers, smoked herbal teas, crushed fruit fizzes, and rich dry fruit shakes. Every drink is prepared with freshly cold-pressed juices and organic syrups.
+            </p>
+
+            <div class="drinks-list">
+              <div class="drink-feature-item" onclick="openQuickView('drink-01')">
+                <div class="drink-feature-info">
+                  <h4>Emerald Arnx Kiwi Mint Cooler</h4>
+                  <p>Fresh crushed kiwi, garden mint, lime elixir, sparkling soda &amp; Himalayan salt.</p>
+                </div>
+                <div class="drink-feature-price">₹229</div>
+              </div>
+
+              <div class="drink-feature-item" onclick="openQuickView('drink-02')">
+                <div class="drink-feature-info">
+                  <h4>Royal Golden Saffron Mango Refresher</h4>
+                  <p>Alphonso mango nectar, Kashmiri saffron essence &amp; 24K edible gold flakes.</p>
+                </div>
+                <div class="drink-feature-price">₹259</div>
+              </div>
+
+              <div class="drink-feature-item" onclick="openQuickView('drink-03')">
+                <div class="drink-feature-info">
+                  <h4>Smoked Hibiscus &amp; Pomegranate Mist</h4>
+                  <p>Egyptian wild hibiscus, ruby pomegranate, torched rosemary &amp; dramatic mist.</p>
+                </div>
+                <div class="drink-feature-price">₹249</div>
+              </div>
+
+              <div class="drink-feature-item" onclick="openQuickView('drink-04')">
+                <div class="drink-feature-info">
+                  <h4>Kesariya Pistachio Rabdi Shake</h4>
+                  <p>Slow-reduced thick milk rabdi, crushed Iranian pistachios &amp; rose essence.</p>
+                </div>
+                <div class="drink-feature-price">₹269</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pure Veg Philosophy: The Sacred Kitchen -->
+    <section class="philosophy-section" id="philosophySection">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">The Pure Veg Pledge</span>
+          <h2 class="section-title">Our Sacred <span class="emerald-gradient-text">Kitchen Heritage</span></h2>
+          <p class="section-subtitle">
+            At The Arnx, vegetarianism is not an alternative — it is an exalted art form honored with sacred respect.
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🌿</div>
+            <h3>100% Meat &amp; Egg Free</h3>
+            <p>
+              We maintain absolute zero cross-contamination. No meat, fish, gelatin, or eggs ever enter our premises.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🧈</div>
+            <h3>A2 Gir Cow Desi Ghee</h3>
+            <p>
+              Every royal curry, dal, and tandoori bread is prepared with pure Vedic bilona cow ghee for unmatched aroma and wellness.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">🪷</div>
+            <h3>Dedicated Jain Stations</h3>
+            <p>
+              Dedicated burners, stone grinders, and cookware specifically reserved for non-root, onion-garlic-free satvik preparations.
+            </p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">✨</div>
+            <h3>Farm-Fresh &amp; Handcrafted</h3>
+            <p>
+              Organic farm produce delivered daily, and artisanal soft malai paneer prepared fresh in-house every morning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Reservation Section -->
+    <section class="reservation-section" id="reservationSection">
+      <div class="container">
+        <div class="reservation-card">
+          <div class="text-center" style="margin-bottom: 2.5rem;">
+            <span class="section-badge">Royal Hospitality</span>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Reserve Your <span class="gold-gradient-text">Royal Table</span></h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Experience candlelight dining amidst emerald velvet, brass chandeliers, and attentive royal service.
+            </p>
+          </div>
+
+          <form id="tableReservationForm">
+            <div class="reservation-form-grid">
+              <div class="form-group">
+                <label class="form-label" for="resName">👤 Full Name *</label>
+                <input type="text" id="resName" class="form-input" required placeholder="e.g. Arun Gupta">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resPhone">📱 Contact Number *</label>
+                <input type="tel" id="resPhone" class="form-input" required placeholder="e.g. +91 98765 43210">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resDate">📅 Reservation Date *</label>
+                <input type="date" id="resDate" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resTime">⏰ Preferred Time Slot *</label>
+                <select id="resTime" class="form-select" required>
+                  <option value="">Select Time Slot</option>
+                  <optgroup label="Lunch (12:00 PM - 4:00 PM)">
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="01:30 PM">01:30 PM</option>
+                    <option value="02:30 PM">02:30 PM</option>
+                  </optgroup>
+                  <optgroup label="Dinner (7:00 PM - 11:30 PM)">
+                    <option value="07:30 PM" selected>07:30 PM (Peak Dinner)</option>
+                    <option value="08:30 PM">08:30 PM</option>
+                    <option value="09:30 PM">09:30 PM</option>
+                    <option value="10:30 PM">10:30 PM</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resGuests">👥 Number of Guests *</label>
+                <select id="resGuests" class="form-select" required>
+                  <option value="2" selected>2 Guests (Couple Dining)</option>
+                  <option value="4">4 Guests (Family Table)</option>
+                  <option value="6">6 Guests (Grand Feast)</option>
+                  <option value="8">8 Guests (Large Group)</option>
+                  <option value="12">12+ Guests (VIP Suite)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resSeating">🪑 Preferred Seating Zone</label>
+                <select id="resSeating" class="form-select">
+                  <option value="Royal Emerald Dining Hall">Royal Emerald Dining Hall</option>
+                  <option value="Starlight Rooftop Garden">Starlight Rooftop Garden</option>
+                  <option value="Private VIP Luxury Suite">Private VIP Luxury Suite</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label" for="resOccasion">🎉 Special Occasion or Dietary Preferences</label>
+                <input type="text" id="resOccasion" class="form-input" placeholder="e.g. Birthday celebration, Jain food only, Anniversary cake setup">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.05rem;">
+              👑 Confirm Royal Table Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Reviews & Social Proof -->
+    <section class="reviews-section" id="reviewsSection">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Guest Praises</span>
+          <h2 class="section-title">What Our Patrons <span class="gold-gradient-text">Celebrate</span></h2>
+          <p class="section-subtitle">Rated 4.95/5 stars by food connoisseurs across India.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "The Arnx Shahi Royal Thali is an unbelievable experience. The Dal Bukhara beats top 5-star hotels, and the atmosphere in emerald green with live mocktail mist is breathtaking!"
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">RG</div>
+              <div class="author-meta">
+                <h5>Rohit Gulati</h5>
+                <span>Verified Google Reviewer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "Finding authentic 100% pure vegetarian food without onions and garlic that still tastes heavenly is so rare. The Arnx Jain menu is truly phenomenal. Highly recommend the Paneer Malai Tikka."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">PS</div>
+              <div class="author-meta">
+                <h5>Pooja &amp; Saurabh Jain</h5>
+                <span>Food Connoisseurs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "The mocktails here are literal art. The Golden Saffron Mango Refresher with gold shimmer paired with their woodfired truffle pizza is the best dining experience in town."
+            </p>
+            <div class="review-author">
+              <div class="author-avatar">AK</div>
+              <div class="author-meta">
+                <h5>Ananya Kapoor</h5>
+                <span>Lifestyle Blogger</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section class="trust-strip" id="contactSection" style="padding: 5rem 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
+          <div>
+            <span class="section-badge">Visit &amp; Connect</span>
+            <h2 class="section-title">The Arnx <span class="gold-gradient-text">Sanctuary</span></h2>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.8rem;">
+              Located on the prestigious Royal Heritage Boulevard, offering valet parking, air-conditioned royal dining halls, and a starlight terrace lounge.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
+              <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+                <span style="color: var(--gold-400); font-size: 1.2rem;">📍</span>
+                <span>Plot 42, Royal Heritage Boulevard, Near City Centre, Luxury Dining District</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <span style="color: var(--gold-400); font-size: 1.2rem;">📞</span>
+                <a href="tel:+919876543210" style="color: #fff; font-weight: 600;">+91 98765 43210 / +91 98765 43211</a>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <span style="color: var(--gold-400); font-size: 1.2rem;">✉️</span>
+                <span>concierge@thearnxfood.com</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <span style="color: var(--gold-400); font-size: 1.2rem;">⏱️</span>
+                <span>All 7 Days: 11:00 AM – 11:30 PM (Kitchen closes 11:00 PM)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions Box -->
+          <div style="background: rgba(12, 38, 27, 0.8); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-lg);">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: #fff; margin-bottom: 1rem;">Direct Ordering &amp; Inquiries</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+              Need banquet catering, private party bookings, or immediate doorstep delivery? Connect instantly with our restaurant concierge.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <a href="https://wa.me/919876543210?text=Hi%20The%20Arnx%2C%20I%20would%20like%20to%20order%20or%20reserve%20a%20table" target="_blank" rel="noopener" class="btn-primary" style="justify-content: center; background: #25d366; color: #fff; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                💬 Order via WhatsApp Concierge
+              </a>
+              <button class="btn-secondary" onclick="scrollToSection('reservationSection')" style="justify-content: center;">
+                🥂 Book Private Dining Suite
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-header">
+      <div class="cart-title">
+        <span>🍲</span>
+        <span>Your Royal Order</span>
+      </div>
+      <button class="close-drawer-btn" id="closeCartDrawerBtn" aria-label="Close Cart">✕</button>
+    </div>
+
+    <!-- Order Type Selector -->
+    <div class="cart-order-type-tabs">
+      <button class="order-type-btn active" data-type="delivery">🛵 Home Delivery</button>
+      <button class="order-type-btn" data-type="dinein">🍽️ Dine-in</button>
+      <button class="order-type-btn" data-type="takeaway">🛍️ Takeaway</button>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-items-list" id="cartDrawerItemsList">
+      <!-- Populated dynamically by JS -->
+    </div>
+
+    <!-- Cart Footer with Totals -->
+    <div class="cart-footer" id="cartDrawerFooter">
+      <!-- Populated dynamically by JS -->
+    </div>
+  </aside>
+
+  <!-- Floating Sticky Order Bar (when items in cart) -->
+  <div class="floating-order-bar" id="floatingOrderBar">
+    <div style="display: flex; align-items: center; gap: 0.6rem;">
+      <span style="font-size: 1.3rem;">🍲</span>
+      <div>
+        <div id="floatingBarCount" style="font-size: 0.85rem; font-weight: 700; color: #fff;">0 items</div>
+        <div id="floatingBarTotal" style="font-size: 0.95rem; font-weight: 800; color: var(--gold-400);">₹0</div>
+      </div>
+    </div>
+    <button class="btn-primary btn-sm open-cart-btn" style="padding: 0.45rem 1rem;">
+      View Order &amp; Checkout →
+    </button>
+  </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/919876543210?text=Hello%20The%20Arnx%20Food%20and%20Drinks%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener" class="floating-whatsapp-btn" title="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Modals -->
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close Modal">✕</button>
+      <div id="quickViewContent">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Pass Modal -->
+  <div class="modal-backdrop" id="reservationPassModal">
+    <div class="modal-dialog" style="max-width: 500px; padding: 2.2rem;">
+      <button class="modal-close-btn" onclick="closeReservationModal()" aria-label="Close Modal">✕</button>
+      <div id="reservationPassDetails">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout & Live Tracking Modal -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-dialog" style="max-width: 580px; padding: 2.2rem;">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close Modal">✕</button>
+      <div id="checkoutModalBody">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/arnx_logo.svg" alt="The Arnx Food Logo" style="height: 54px; margin-bottom: 0.5rem;">
+          <p>
+            Experience the zenith of 100% pure vegetarian culinary art. Traditional royal Indian recipes, artisanal mocktails, and pristine hygiene.
+          </p>
+          <div style="display: flex; gap: 0.8rem; font-size: 1.2rem;">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+            <a href="#" aria-label="Google Maps">📍</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home Experience</a></li>
+            <li><a href="#specials">Chef's Signature Thalis</a></li>
+            <li><a href="#menuSection">Complete Menu</a></li>
+            <li><a href="#drinksSection">Artisanal Drinks Lounge</a></li>
+            <li><a href="#reservationSection">Table Reservation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Our Pure Guarantee</h4>
+          <ul class="footer-links">
+            <li><a href="#philosophySection">100% Meat &amp; Egg Free</a></li>
+            <li><a href="#philosophySection">Vedic A2 Gir Cow Ghee</a></li>
+            <li><a href="#philosophySection">Dedicated Jain Stations</a></li>
+            <li><a href="#contactSection">Banquets &amp; Catering</a></li>
+            <li><a href="#contactSection">FSSAI Certified Kitchen</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Dining Hours</h4>
+          <div class="footer-hours-item">
+            <span>Monday – Friday:</span>
+            <strong>11:00 AM – 11:30 PM</strong>
+          </div>
+          <div class="footer-hours-item">
+            <span>Saturday – Sunday:</span>
+            <strong>10:30 AM – 12:00 AM</strong>
+          </div>
+          <div style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--gold-300);">
+            🟢 FSSAI License No: 10022011000492<br>
+            Strict 100% Pure Veg Certification
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>The Arnx Food &amp; Drinks</strong>. All rights reserved. 100% Pure Vegetarian Delights.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Dining</a>
+          <a href="#">Hygiene Report</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/menu-data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
